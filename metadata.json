@@ -1,0 +1,7 @@
+{
+  "name": "ResQLink — Advanced Emergency Communication",
+  "description": "A premium tech product launch platform for ResQLink, featuring LoRa Mesh technology and 3D device visualization.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

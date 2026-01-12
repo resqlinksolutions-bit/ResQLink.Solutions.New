@@ -160,12 +160,18 @@ const Home: React.FC = () => {
               Join the elite teams already using ResQLink for mountain rescue, field ops, and disaster relief.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
-              <button className="px-12 py-5 bg-white text-dark font-bold rounded-full hover:bg-accent transition-colors shadow-2xl">
+              <Link 
+                to="/get-started"
+                className="px-12 py-5 bg-white text-dark font-bold rounded-full hover:bg-accent transition-colors shadow-2xl"
+              >
                 Get Started Now
-              </button>
-              <button className="px-12 py-5 bg-white/10 border border-white/20 text-white font-bold rounded-full hover:bg-white/20 transition-colors">
+              </Link>
+              <Link 
+                to="/get-started"
+                className="px-12 py-5 bg-white/10 border border-white/20 text-white font-bold rounded-full hover:bg-white/20 transition-colors"
+              >
                 Contact Sales
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>

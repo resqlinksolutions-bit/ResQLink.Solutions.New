@@ -10,6 +10,7 @@ import Technology from './pages/Technology';
 import Features from './pages/Features';
 import Team from './pages/Team';
 import Account from './pages/Account';
+import GetStarted from './pages/GetStarted';
 import Auth from './components/Auth';
 import { UserProfile } from './types';
 
@@ -119,6 +120,7 @@ const App: React.FC = () => {
                 <Route path="/technology" element={<Technology />} />
                 <Route path="/features" element={<Features />} />
                 <Route path="/team" element={<Team />} />
+                <Route path="/get-started" element={<GetStarted />} />
                 <Route 
                   path="/account" 
                   element={
@@ -160,6 +162,7 @@ const App: React.FC = () => {
                 <ul className="space-y-4 text-light/50">
                   <li><a href="#/technology" className="hover:text-accent transition-colors">Technology</a></li>
                   <li><a href="#/features" className="hover:text-accent transition-colors">Features</a></li>
+                  <li><a href="#/get-started" className="hover:text-accent transition-colors">Get Started</a></li>
                 </ul>
               </div>
               <div>

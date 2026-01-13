@@ -11,6 +11,7 @@ import Features from './pages/Features';
 import Team from './pages/Team';
 import Account from './pages/Account';
 import GetStarted from './pages/GetStarted';
+import ContactSales from './pages/ContactSales';
 import Auth from './components/Auth';
 import { UserProfile } from './types';
 
@@ -32,7 +33,7 @@ export const useAuth = () => useContext(AuthContext);
 
 const ProtectedRoute = ({ children }: { children?: React.ReactNode }) => {
   const { user, loading } = useAuth();
-  if (loading) return null; // Let the startup loader handle initial loading visual
+  if (loading) return null;
   if (!user) return <Navigate to="/" replace />;
   return <>{children}</>;
 };
@@ -44,7 +45,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const startTime = Date.now();
-    const minLoadingTime = 2500; // 2.5 seconds minimum for premium feel
+    const minLoadingTime = 2500;
 
     const checkUser = async () => {
       try {
@@ -62,13 +63,9 @@ const App: React.FC = () => {
           if (mockUser) setUser(JSON.parse(mockUser));
         }
       } finally {
-        // Ensure loader is visible for at least minLoadingTime
         const elapsed = Date.now() - startTime;
         const delay = Math.max(0, minLoadingTime - elapsed);
-        
-        setTimeout(() => {
-          setLoading(false);
-        }, delay);
+        setTimeout(() => setLoading(false), delay);
       }
     };
 
@@ -121,6 +118,7 @@ const App: React.FC = () => {
                 <Route path="/features" element={<Features />} />
                 <Route path="/team" element={<Team />} />
                 <Route path="/get-started" element={<GetStarted />} />
+                <Route path="/contact-sales" element={<ContactSales />} />
                 <Route 
                   path="/account" 
                   element={
@@ -169,7 +167,7 @@ const App: React.FC = () => {
                 <h3 className="font-bold mb-6 text-secondary">Company</h3>
                 <ul className="space-y-4 text-light/50">
                   <li><a href="#/team" className="hover:text-accent transition-colors">Team</a></li>
-                  <li><a href="#" className="hover:text-accent transition-colors">Contact</a></li>
+                  <li><a href="#/contact-sales" className="hover:text-accent transition-colors">Contact Sales</a></li>
                   <li><a href="#" className="hover:text-accent transition-colors">Documentation</a></li>
                 </ul>
               </div>

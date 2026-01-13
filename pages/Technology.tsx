@@ -18,8 +18,8 @@ const Technology: React.FC = () => {
       color: "from-primary/20 to-transparent"
     },
     {
-      title: "Military-Grade Security",
-      desc: "AES-256 GCM encryption ensures that even though the network is public-access, your data remains strictly confidential and tamper-proof.",
+      title: "High Security",
+      desc: "Enterprise-grade AES-256 GCM encryption ensures that even though the network is decentralized, your data remains strictly confidential and protected from unauthorized access.",
       icon: <ShieldAlert className="text-secondary" />,
       color: "from-secondary/20 to-transparent"
     }
@@ -62,6 +62,7 @@ const Technology: React.FC = () => {
                     </div>
                   ))}
                 </div>
+                <p className="text-[10px] text-light/20 mt-6 italic text-right">*Proven in internal tests</p>
               </div>
 
               {/* Animated Visualization Simulation */}

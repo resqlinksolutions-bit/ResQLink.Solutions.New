@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Shield, Zap, Globe, ArrowRight, Radio } from 'lucide-react';
+import { Shield, Zap, Globe, ArrowRight, Radio, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
@@ -72,25 +72,34 @@ const Home: React.FC = () => {
 
       {/* Stats / Highlight Section */}
       <section className="py-32 px-6 bg-light text-dark relative">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
-          {[
-            { label: 'Network Range', value: '15km+', sub: 'Line of sight' },
-            { label: 'Uptime', value: '99.99%', sub: 'In disaster zones' },
-            { label: 'Nodes', value: '∞', sub: 'Scalable mesh' },
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="text-center md:text-left"
-            >
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-primary/60 mb-2 block">{stat.label}</span>
-              <h3 className="text-6xl font-display font-bold text-dark mb-1">{stat.value}</h3>
-              <p className="text-dark/40 font-medium">{stat.sub}</p>
-            </motion.div>
-          ))}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            {[
+              { label: 'Network Range', value: '15km+', sub: 'Line of sight' },
+              { label: 'Uptime', value: '99.99%', sub: 'In disaster zones' },
+              { label: 'Nodes', value: '∞', sub: 'Scalable mesh' },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center md:text-left"
+              >
+                <span className="text-xs uppercase tracking-[0.3em] font-bold text-primary/60 mb-2 block">{stat.label}</span>
+                <h3 className="text-6xl font-display font-bold text-dark mb-1">{stat.value}</h3>
+                <p className="text-dark/40 font-medium">{stat.sub}</p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-[10px] text-dark/30 mt-12 text-center md:text-left uppercase tracking-tighter"
+          >
+            *Proven in internal tests
+          </motion.p>
         </div>
       </section>
 
@@ -179,9 +188,5 @@ const Home: React.FC = () => {
     </div>
   );
 };
-
-const ChevronRight = ({ className }: { className?: string }) => (
-  <svg className={className} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-);
 
 export default Home;

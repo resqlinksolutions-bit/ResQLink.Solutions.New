@@ -7,9 +7,9 @@ const Team: React.FC = () => {
     { name: "Drakshi Meshram", role: "Chief Executive Officer (CEO)" },
     { name: "Shagun Jha", role: "Chief Operating Officer (COO)" },
     { name: "Dhruv Mankar", role: "Chief Technology Officer (CTO)" },
+    { name: "Ashvat Yadav", role: "Head of Design" },
     { name: "Ansh Padole", role: "Head of Research & Development" },
-    { name: "Ashvat Yadav", role: "Chief Design Officer (CDO)" },
-    { name: "Arnav Bodas", role: "Chief Marketing Officer (CMO)" },
+    { name: "Arnav Bodas", role: "Marketing Manager" },
   ];
 
   return (
@@ -41,14 +41,13 @@ const Team: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
           {members.map((m, i) => (
             <motion.div
-              key={i}
+              key={m.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="relative py-8 border-t border-white/10 group"
             >
-              {/* Decorative accent dot that appears on scroll/reveal */}
               <motion.div 
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
@@ -66,7 +65,6 @@ const Team: React.FC = () => {
                 </h3>
               </div>
               
-              {/* Subtle visual floor */}
               <div className="mt-8 h-[1px] w-0 group-hover:w-full bg-gradient-to-r from-accent/40 to-transparent transition-all duration-700" />
             </motion.div>
           ))}

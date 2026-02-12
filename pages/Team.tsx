@@ -13,7 +13,7 @@ const Team: React.FC = () => {
     { 
       name: "Shagun Jha", 
       role: "Chief Operating Officer (COO)",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800" 
+      image: "https://i.ibb.co/LdgqspP3/Gemini-Generated-Image-cebhnycebhnycebh.png" 
     },
     { 
       name: "Dhruv Mankar", 
